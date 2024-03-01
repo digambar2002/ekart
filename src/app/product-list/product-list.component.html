@@ -1,11 +1,17 @@
 <section style="background-color: #eee;">
   <div class="container py-5">
+
+   <div class="container mx-5 px-5 mb-4">
+      <!-- search box -->
+      <app-search class="mt-4"></app-search>
+
+   </div>
+
     <div class="row justify-content-center">
       <div class="col-md-8 col-lg-6 col-xl-4">
         <div class="card text-black">
           <i class="fab fa-apple fa-lg pt-3 pb-1 px-3"></i>
           <img [src]="product.imgUrl" class="card-img-top" alt="Apple Computer" />
-
           <div class="card-body">
             <!-- <div class="mb-3">
                 <label  for="exampleFormControlInput1" class="form-label">Enter Product Name</label>
@@ -30,9 +36,9 @@
 
             <div class="text-center">
               <div class="btn-group mt-4" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-primary">Left</button>
-                <button type="button" class="btn btn-primary">Middle</button>
-                <button type="button" class="btn btn-primary">Right</button>
+                <button type="button" (click)="decrementCart()"[disabled]="!(cart> 1)" class="btn btn-primary">-</button>
+                <h3 class="mx-3">{{cart}}</h3>
+                <button type="button" (click)="incrementCart()" class="btn btn-primary">+</button>
               </div>
             </div>
 
