@@ -5,16 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { TopHeaderComponent } from './top-header/top-header.component';
-import { ProductListComponent } from './product-list/product-list.component';
-import { SearchComponent } from './product-list/search/search.component';
+import { ContainerComponent } from './container/container.component';
+import { SearchComponent } from './container/search/search.component';
 import { FormsModule } from '@angular/forms';
+import { MainMenuComponent } from './header/main-menu/main-menu.component';
+import { ProductListComponent } from './container/product-list/product-list.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     TopHeaderComponent,
-    ProductListComponent,
-    SearchComponent
+    ContainerComponent,
+    SearchComponent,
+    MainMenuComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,

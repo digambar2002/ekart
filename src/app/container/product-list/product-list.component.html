@@ -1,0 +1,38 @@
+<div *ngFor="let item of products" class="col-md-4 col-lg-4 col-xl-4 my-2">
+
+    <div class="card text-black">
+
+        <img [src]="item.imageURL" class="card-img-top" alt="Apple Computer" />
+        <div class="card-body mb-2">
+            <div class="text-center">
+                <h5 class="card-title">{{item.name}}</h5>
+                <p class="text-muted mb-4">Apple pro display</p>
+            </div>
+            <div>
+                <div class="d-flex justify-content-between">
+                    <span>Price</span><span>{{'$'+item.price}}</span>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <span>Color</span><span>{{item.color}}</span>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <span>Discount</span><span>${{item.discountPrice!>0 ? item.discountPrice: "0"}}</span>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <span>Stock</span>
+                    <span [ngStyle]="{fontWeight: 'bold', color: item.is_in_inventory ? 'green' :'red'}">
+                        {{item.is_in_inventory ? "In Stock":"Out of Stock"}}
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="d-grid mt-4 pt-2">
+                <button class="btn btn-danger" type="button">Buy Now</button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
